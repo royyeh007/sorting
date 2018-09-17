@@ -8,7 +8,7 @@ describe('Bubble Sort', function(){
   });
 
   it('handles multiple items', function(){
-    expect( bubbleSort([3, 1, 4, 2]) ).toEqual( [1, 2, 3, 4] );
+    expect( bubbleSort([3, 6, 2, 1]) ).toEqual( [1, 2, 3, 6] );
   });
 
   it('handles arrays with multiple digits', function(){
@@ -17,11 +17,13 @@ describe('Bubble Sort', function(){
 
 
   beforeAll(function () {
-    spyOn('swap').and.callThrough();
+    spyOn(window, 'swap').and.callThrough();
   });
 
+
   it('uses a counter', function(){
+
     bubbleSort([3, 6, 2, 1]);
-    expect(swap.calls.count().toEqual(5))
+    expect(swap.calls.count()).toEqual(5);
   });
 });
