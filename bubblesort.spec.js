@@ -12,19 +12,19 @@ describe('Bubble Sort', function(){
   });
 
   it('handles arrays with multiple digits', function(){
-    expect( bubbleSort([2, 13, 4, 20]) ).toEqual( [2, 4, 13, 20] );
+    expect( bubbleSort([8, 13, 4, 20]) ).toEqual( [4, 8, 13, 20] );
   });
 
   it('checks for numbers', function(){
     expect( bubbleSort(['string']) ).toEqual( [NaN] );
   });
 
-  beforeAll(function () {
-    spyOn('swap').and.callThrough(); // replace existing `tootsiepop['lick']` method
-  });
+  // beforeAll(function () {
+  //   spyOn('swap').and.callThrough(); // replace existing `tootsiepop['lick']` method
+  // });
 
-  it('uses a counter', function(){
-    bubbleSort([3, 6, 2, 1]);
-    expect(bubbleSort.swap.calls.count().toEqual(5))
-  });
+  // it('uses a counter', function(){
+  //   bubbleSort([3, 6, 2, 1]);
+  //   expect(bubbleSort.swap.calls.count().toEqual(5))
+  // });
 });
