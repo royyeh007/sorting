@@ -8,23 +8,22 @@ describe('Bubble Sort', function(){
   });
 
   it('handles multiple items', function(){
-    expect( bubbleSort([3, 1, 4, 2]) ).toEqual( [1, 2, 3, 4] );
+    expect( bubbleSort([3, 6, 2, 1]) ).toEqual( [1, 2, 3, 6] );
   });
 
   it('handles arrays with multiple digits', function(){
     expect( bubbleSort([8, 13, 4, 20]) ).toEqual( [4, 8, 13, 20] );
   });
 
-  it('checks for numbers', function(){
-    expect( bubbleSort(['string']) ).toEqual( [NaN] );
+
+  beforeAll(function () {
+    spyOn(window, 'swap').and.callThrough();
   });
 
-  // beforeAll(function () {
-  //   spyOn('swap').and.callThrough(); // replace existing `tootsiepop['lick']` method
-  // });
 
-  // it('uses a counter', function(){
-  //   bubbleSort([3, 6, 2, 1]);
-  //   expect(bubbleSort.swap.calls.count().toEqual(5))
-  // });
+  it('uses a counter', function(){
+
+    bubbleSort([3, 6, 2, 1]);
+    expect(swap.calls.count()).toEqual(5);
+  });
 });
