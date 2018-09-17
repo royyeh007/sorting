@@ -8,9 +8,16 @@ function split(array) {
     // split(firstHalf);
     // split(secondHalf);
     // return (split(firstHalf), split(secondHalf));
-    return split(firstHalf, secondHalf);
+    return merge(split(firstHalf), split(secondHalf));
   }
 }
-let newArr = [];
-newArr = (split([4, 3, 2, 1]));
-console.log(newArr);
+split([4, 3, 2, 1]);
+
+
+function merge(firstHalf, secondHalf){
+    return [firstHalf, secondHalf];
+}
+
+function mergeSort(){
+
+}
